@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vortex - Registro</title>
+    <link rel="stylesheet" href="registro.component.css">
+  </head>
+  <body>
+
+    <div class="registro-box">
+      <h1>Registro</h1>
+      
+        <!-- Correo -->
+        <label for="email">Correo</label>
+        <input type="text" placeholder="Ingresa tu correo" required [(ngModel)] = "usuarios.email">
+        <!-- Nombre -->
+        <label for="name">Nombre</label>
+        <input type="text" placeholder="Ingresa tu nombre" required [(ngModel)] = "usuarios.name">
+        <!-- Dirección -->
+        <label for="addres">Dirección</label>
+        <input type="text" placeholder="Ingresa tu dirección" required [(ngModel)] = "usuarios.addres">  
+        <!-- Teléfono -->
+        <label for="phone">Teléfono</label>
+        <input type="number" placeholder="Ingresa tu teléfono" required [(ngModel)] = "usuarios.phone"> 
+        <!-- Contraseña -->
+        <label for="token">Contraseña</label>
+        <input type="password" placeholder="Ingresa tu contraseña ⚠️ Mínimo 6 caracteres ⚠️" minlength="6" required [(ngModel)] = "usuarios.token">        
+        <!-- Estado -->
+        <label for="enable">Estado</label>
+        <input type="text" disabled [(ngModel)] = "usuarios.enable">                                       
+
+        <input type="submit" value="Registrar" (click) = "ingresar()">
+
+      
+    </div>
+  </body>
+</html>
