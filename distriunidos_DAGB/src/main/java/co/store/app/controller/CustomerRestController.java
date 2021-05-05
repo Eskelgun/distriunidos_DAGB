@@ -44,12 +44,12 @@ public class CustomerRestController {
 	}
 
 //	Consultar todos cliente por correo y token
-	@GetMapping("/consultarClientesByCorreoAndToken")
-	public ResponseEntity<?> consultarClientesByCorreoAndToken(@RequestParam("correo") String correo,
-			@RequestParam("token") String token) {
+	@GetMapping("/consultarClientesByCorreoAndToken/{email}/{token}")
+	public ResponseEntity<?> consultarClientesByCorreoAndToken(@PathVariable("email") String email,
+			@PathVariable("token") String token) {
 
 		try {
-			return ResponseEntity.ok(customerService.consultarPorEmailAndToken(correo, token));
+			return ResponseEntity.ok(customerService.consultarPorEmailAndToken(email, token));
 		} catch (Exception e) {
 
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());

@@ -45,7 +45,7 @@ public class CustomerServiceImpl implements CustomerService {
 			throw new Exception("No puede ser vacío el campo TOKEN.");
 		}
 
-		List<Customer> listClientes = customerRepository.findByEmaildAndToken(email, token);
+		List<Customer> listClientes = customerRepository.findByEmailAndToken(email, token);
 
 		return listClientes;
 	}
@@ -100,7 +100,7 @@ public class CustomerServiceImpl implements CustomerService {
 		
 //		Contraseña
 		if (customer.getToken() == null || customer.getToken().trim().equals(" ")) {
-			throw new Exception("No hay Clientes existentes en el CONTRASEÑA.");
+			throw new Exception("Error en el dato CONTRASEÑA.");
 		}
 		
 //		Guardamos el cliente

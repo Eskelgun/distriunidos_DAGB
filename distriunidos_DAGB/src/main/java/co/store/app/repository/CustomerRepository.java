@@ -15,14 +15,14 @@ public interface CustomerRepository extends JpaRepository<Customer, String> {
 	 * @param estado
 	 * @return List<Customer>
 	 */
-	public List<Customer> findByEnableOrderByName(@Param("pEstado") String estado);
+	public List<Customer> findByEnableOrderByName(@Param("estado") String estado);
 
 	/**
 	 * select * from customer where email = ?1 and token = ?2
 	 * 
-	 * @param estado
+	 * @param email, token
 	 * @return List<Customer>
 	 */
-	public List<Customer> findByEmaildAndToken(@Param("pEmail") String email, @Param("pToken") String token);
+	public List<Customer> findByEmailAndToken(@Param("email") String email, @Param("token") String token);
 
 }

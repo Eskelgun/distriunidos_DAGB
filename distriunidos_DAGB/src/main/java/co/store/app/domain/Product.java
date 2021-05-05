@@ -11,8 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @Entity
 @Table(name = "product")
 public class Product implements Serializable {
@@ -45,7 +43,7 @@ public class Product implements Serializable {
 
 	/* Llaves foraneas y relaciones */
 
-	@JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" }, allowSetters = true)
+//	@JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" }, allowSetters = true)
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
 	private List<ShoppingProduct> shopCart = new ArrayList<>();
 
