@@ -18,17 +18,54 @@ public interface ProductService {
 	public List<Product> consultarProductos() throws Exception;
 
 	/**
+	 * Consulta los Productos según un nombre
+	 * 
+	 * @param nombre
+	 * @return List<Product>
+	 * @throws Exception
+	 */
+	public List<Product> consultarPorNombre(String nombre) throws Exception;
+	
+	/**
+	 * Consulta los Productos según un nombre con LIKE
+	 * 
+	 * @param nombre
+	 * @return List<Product>
+	 * @throws Exception
+	 */
+	public List<Product> consultarPorNombreLike(String nombre) throws Exception;
+
+	/**
+	 * Consulta los Productos según un precio menos a
+	 * 
+	 * @param precio
+	 * @return List<Product>
+	 * @throws Exception
+	 */
+	public List<Product> consultarPorPrecioMenosA(float precio) throws Exception;
+
+	/**
+	 * Consulta los Productos según un precio mayor a
+	 * 
+	 * @param precio
+	 * @return List<Product>
+	 * @throws Exception
+	 */
+	public List<Product> consultarPorPrecioMayorA(float precio) throws Exception;
+
+	/**
 	 * Consulta los Productos según un estado
 	 * 
 	 * @param estado
 	 * @return List<Product>
 	 * @throws Exception
 	 */
-	public List<Product> consultarPorEstado(String estado) throws Exception;
+	public List<Product> consultarPorEstado(String estado) throws Exception;	
 
 	/* BUSCAR */
 
 	/**
+	 * Busca un producto por su Id
 	 * 
 	 * @param id
 	 * @return Optional<Product>

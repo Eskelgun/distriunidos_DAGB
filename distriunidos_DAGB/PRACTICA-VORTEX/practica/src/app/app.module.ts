@@ -6,15 +6,18 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroComponent } from './registro/registro.component';
+
 import { MenuComponent } from './menu/menu.component';
 import { FormsModule } from '@angular/forms';
+import { MediosPagoComponent } from './medios-pago/medios-pago.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistroComponent,
-    MenuComponent
+    MenuComponent,
+    MediosPagoComponent
   ],
   imports: [
     BrowserModule,

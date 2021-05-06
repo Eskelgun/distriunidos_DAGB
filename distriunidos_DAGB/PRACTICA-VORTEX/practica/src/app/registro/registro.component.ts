@@ -33,7 +33,7 @@ export class RegistroComponent implements OnInit {
         
       },
       err=>{
-        console.log(err.error.error);
+        window.alert(err);
         
         
         }

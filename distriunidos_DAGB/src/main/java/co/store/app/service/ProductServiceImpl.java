@@ -16,6 +16,8 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	private ProductRepository productRepository;
 
+	/* CONSULTAR */
+
 //	Consulta todos los Productos
 	@Override
 	public List<Product> consultarProductos() throws Exception {
@@ -43,6 +45,66 @@ public class ProductServiceImpl implements ProductService {
 		}
 		return listProductos;
 	}
+
+//	Consulta los Productos según un nombre
+	@Override
+	public List<Product> consultarPorNombre(String nombre) throws Exception {
+
+		// Creamos una lista cargada con todos los productos según el nombre ordenados
+		// por el nombre
+		List<Product> listProductos = productRepository.findByNameOrderByName(nombre);
+
+
+		if (listProductos.isEmpty()) {
+			throw new Exception("No hay Productos existentes en el sistema con ese nombre.");
+		}
+		return listProductos;
+	}
+
+
+//	Consulta los Productos según un nombre similar
+	@Override
+	public List<Product> consultarPorNombreLike(String nombre) throws Exception {
+
+		// Creamos una lista cargada con todos los productos según el nombre similar ordenados
+		// por el nombre
+		List<Product> listProductos = productRepository.findByNameContainingOrderByName(nombre);
+
+		if (listProductos.isEmpty()) {
+			throw new Exception("No hay Productos existentes en el sistema con ese nombre.");
+		}
+		return listProductos;
+	}
+
+//	Consulta los Productos según un precio menor a un valor
+	@Override
+	public List<Product> consultarPorPrecioMenosA(float precio) throws Exception {
+
+		// Creamos una lista cargada con todos los productos según el precio menor a un valor ordenados
+		// por el precio
+		List<Product> listProductos = productRepository.findByPriceLessThanEqualOrderByPrice(precio);
+
+		if (listProductos.isEmpty()) {
+			throw new Exception("No hay Productos existentes en el sistema con ese nombre.");
+		}
+		return listProductos;
+	}
+
+//	Consulta los Productos según un precio mayor a un valor
+	@Override
+	public List<Product> consultarPorPrecioMayorA(float precio) throws Exception {
+
+		// Creamos una lista cargada con todos los productos según el precio mayor a un valor ordenados
+		// por el precio
+		List<Product> listProductos = productRepository.findByPriceGreaterThanEqualOrderByPrice(precio);
+
+		if (listProductos.isEmpty()) {
+			throw new Exception("No hay Productos existentes en el sistema con ese nombre.");
+		}
+		return listProductos;
+	}
+
+	/* GUARDAR */
 
 //	Guarda un metodo de pago
 	@Override
@@ -74,6 +136,8 @@ public class ProductServiceImpl implements ProductService {
 		productRepository.save(product);
 
 	}
+
+	/* ACTUALIZAR */
 
 //	Actualiza un Producto
 	@Override
@@ -131,6 +195,7 @@ public class ProductServiceImpl implements ProductService {
 		productRepository.delete(product);
 
 	}
+
 
 	/*
 	 * // Actualiza el estado de un Producto

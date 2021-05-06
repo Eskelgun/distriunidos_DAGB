@@ -1,1 +1,56 @@
-<p>menu works!</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="menu.component.css">
+
+    <title> Vortex - Menu</title>
+</head>
+
+<body>
+
+    <h2>
+        Menú
+        <a href="/login" class="button">Salir</a>
+    </h2>    
+        
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6" *ngFor="let producto of productos">
+                <!--    recuadro  [] -->
+                <div class="product-grid">
+                    {{producto.name}}
+                    <div class="product-image">
+                        <a href="/menu">
+                            <img class="pic-1" src="{{producto.image}}">
+                            <img class="pic-2" src="https://previews.123rf.com/images/roxanabalint/roxanabalint1606/roxanabalint160600196/59196465-not-for-sale-grunge-rubber-stamp-on-white-background-vector-illustration.jpg">
+                        </a>
+
+                        <ul class="social">
+                            <li><a href="/menu" data-tip="Añadir al carro"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a href="/menu" data-tip="Añadir a la lista de deseos"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="/menu" data-tip="Detalles"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a>{{producto.detail}} </a></h3>
+                        <div class="price">${{producto.price}}</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--    recuadro-->
+
+
+        </div>
+    </div>
+</body>
+
+</html>

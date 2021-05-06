@@ -56,6 +56,58 @@ public class ProductRestController {
 
 	}
 
+//	Consultar todos los Productos por nombre
+	@GetMapping("/consultarProductoByName")
+	public ResponseEntity<?> consultarProductoByName(@RequestParam("name") String name) {
+
+		try {
+			return ResponseEntity.ok(productService.consultarPorNombre(name));
+		} catch (Exception e) {
+
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+		}
+
+	}
+
+//	Consultar todos los Productos por nombre similar a
+	@GetMapping("/consultarProductoByNameLike")
+	public ResponseEntity<?> consultarProductoByNameLike(@RequestParam("name") String name) {
+
+		try {
+			return ResponseEntity.ok(productService.consultarPorNombreLike(name));
+		} catch (Exception e) {
+
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+		}
+
+	}
+
+//	Consultar todos los Productos por precio menor a
+	@GetMapping("/consultarProductoByPriceLess")
+	public ResponseEntity<?> consultarProductoByPriceLess(@RequestParam("price") float price) {
+
+		try {
+			return ResponseEntity.ok(productService.consultarPorPrecioMenosA(price));
+		} catch (Exception e) {
+
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+		}
+
+	}
+
+//	Consultar todos los Productos por precio mayor a
+	@GetMapping("/consultarProductoByPriceMore")
+	public ResponseEntity<?> consultarProductoByPriceMore(@RequestParam("price") float price) {
+
+		try {
+			return ResponseEntity.ok(productService.consultarPorPrecioMayorA(price));
+		} catch (Exception e) {
+
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+		}
+
+	}
+
 	/* GUARDAR */
 	@PostMapping("/guardarProducto")
 	public ResponseEntity<?> guardarProducto(@RequestBody ProductDTO productDTO) {
