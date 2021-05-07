@@ -19,6 +19,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 	@Override
 	public Optional<ShoppingCart> buscarShoppingCartById(int idCar) throws Exception {
 
+//		idCar
 		if (idCar <= 0) {
 			throw new Exception("El id del carro no puede ser inferior a 1");
 		}

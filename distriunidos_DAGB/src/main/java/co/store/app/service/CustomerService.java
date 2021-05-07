@@ -21,7 +21,7 @@ public interface CustomerService {
 	 * Consulta los Clientes según un correo y token
 	 * 
 	 * @param email,token
-	 * @return List<Product>
+	 * @return List<Customer>
 	 * @throws Exception
 	 */
 	public List<Customer> consultarPorEmailAndToken(String email, String token) throws Exception;
@@ -30,7 +30,7 @@ public interface CustomerService {
 	 * Consulta los Clientes según un estado
 	 * 
 	 * @param estado
-	 * @return List<Product>
+	 * @return List<Customer>
 	 * @throws Exception
 	 */
 	public List<Customer> consultarPorEstado(String estado) throws Exception;
@@ -50,7 +50,7 @@ public interface CustomerService {
 	/**
 	 * Guarda un Cliente
 	 * 
-	 * @param product
+	 * @param customer
 	 * @throws Exception
 	 */
 	public void guardarClientes(Customer customer) throws Exception;

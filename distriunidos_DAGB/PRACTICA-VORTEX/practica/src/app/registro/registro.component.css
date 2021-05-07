@@ -1,3 +1,4 @@
+/* Fondo */
 body {
     margin               : 0;
     padding              : 0;
@@ -9,6 +10,7 @@ body {
     font-family          : sans-serif;
 }
 
+/* Contenedor del registro */
 .registro-box {
     width     : 580px;
     height    : 620px;
@@ -23,6 +25,7 @@ body {
     margin-top: 50px;
 }
 
+/* Titulo en la caja de registro */
 .registro-box h1 {
     margin    : 0;
     padding   : 0 0 20px;
@@ -30,6 +33,7 @@ body {
     font-size : 22px;
 }
 
+/* Opciones de los titulos de los campos */
 .registro-box label {
     margin     : 0;
     padding    : 0;
@@ -37,11 +41,13 @@ body {
     display    : block;
 }
 
+/* Opciones de los input */
 .registro-box input {
     width        : 100%;
     margin-bottom: 20px;
 }
 
+/* Opciones del texto de los input */
 .registro-box input[type="text"],
 .registro-box input[type="number"],
 .registro-box input[type="password"] {
@@ -54,6 +60,7 @@ body {
     font-size    : 16px;
 }
 
+/* Boton de registrar */
 .registro-box input[type="submit"] {
     border       : none;
     outline      : none;
@@ -64,16 +71,19 @@ body {
     border-radius: 20px;
 }
 
+/* Boton de registrar en hover*/
 .registro-box input[type="submit"]:hover {
     cursor    : pointer;
     background: green;
     color     : rgb(0, 0, 0);
 }
 
+/* Campo estado deshabilitado */
 input:disabled {
     color: rgb(160, 160, 160) !important;
 }
 
+/* Efecto visual de un campo mínimo de 6 caracteres */
 .registro-box input[type="password"]:invalid {
     border       : none;
     border-bottom: 2px solid red;

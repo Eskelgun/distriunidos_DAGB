@@ -13,17 +13,23 @@
 
 <body>
 
+    <!-- Container general de los medios de pago y su información -->
     <div class="caja" >
         <select>
+          <!-- Ciclo para cargar los datos de los medios de pagos -->
           <option *ngFor="let mediosP of medioPagos">{{mediosP.name}}</option>
         </select>
       </div>
 
+      <!-- Información requerida para pagar desde la tarjeta de credito -->
       <div class="tarjeta">
+        <!-- Número de la tarjeta -->
         <label for="tajeta">Num. Tarjeta</label>
         <input type="text" placeholder="Ingresa el número de la tarjeta." required>
+        <!-- Código CVV -->
         <label for="cvv">CVV</label>
         <input type="text" placeholder="Ingresa el CVV de la tarjeta." required>
+        <!-- Fecha de expedición -->
         <label for="feExpe">Fecha expedición</label>
         <input type="date" placeholder="Ingresa la fecha expedición de la tarjeta." required>
       </div>

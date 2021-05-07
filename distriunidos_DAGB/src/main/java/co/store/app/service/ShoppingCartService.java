@@ -11,7 +11,7 @@ public interface ShoppingCartService {
 	 * Busca un carro de compras.
 	 * 
 	 * @param idCar
-	 * @return
+	 * @return Optional<ShoppingCart>
 	 * @throws Exception
 	 */
 	public Optional<ShoppingCart> buscarShoppingCartById(int idCar) throws Exception;

@@ -1,8 +1,10 @@
+/* fondo */
 html body {
   background: rgb(253, 250, 29);
   background: linear-gradient(90deg, rgba(253, 250, 29, 1) 20%, rgba(7, 0, 236, 1) 50%, rgba(248, 0, 0, 1) 100%);
 }
 
+/* Caja */
 .caja {
   margin         : 20px auto;
   border         : 1.5px solid rgb(217, 217, 217);
@@ -14,6 +16,7 @@ html body {
 
 }
 
+/* Opción principal */
 select {
   background : transparent;
   border     : none;
@@ -30,6 +33,7 @@ select:focus {
   outline: none;
 }
 
+/* Opciones desplegables */
 .caja::after {
   content         : "\025be";
   display         : table-cell;
@@ -44,6 +48,7 @@ select:focus {
   pointer-events  : none;
 }
 
+/* Datos de la opción de pago */
 .tarjeta input {
     border       : none;
     border-bottom: 1px solid rgb(255, 255, 255);

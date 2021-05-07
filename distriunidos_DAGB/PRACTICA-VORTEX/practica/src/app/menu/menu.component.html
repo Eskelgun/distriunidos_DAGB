@@ -16,31 +16,43 @@
 <body>
 
     <h2>
+        <!-- Boton para consultar la pagina de los medios de pago -->
         <a href="/medioPago" class="buttonPago">Metodos pago</a>
         Menú
+
+        <!-- Boton de deslogeo -->
         <a href="/login" class="buttonSalir">Salir</a>
     </h2>    
         
+    <!-- Contenedor general -->
     <div class="container">
         <div class="row">
+            <!-- Ciclo para mostrar cada producto -->
             <div class="col-md-3 col-sm-6" *ngFor="let producto of productos">
-                <!--    recuadro  [] -->
                 <div class="product-grid">
+                    <!-- Nombre del producto -->
                     {{producto.name}}
+                    <!-- Imagen del producto                     -->
                     <div class="product-image">
                         <a href="/menu">
                             <img class="pic-1" src="{{producto.image}}">
+                            <!-- Imagen de no a la venta -->
                             <img class="pic-2" src="https://previews.123rf.com/images/roxanabalint/roxanabalint1606/roxanabalint160600196/59196465-not-for-sale-grunge-rubber-stamp-on-white-background-vector-illustration.jpg">
                         </a>
-
+                        <!-- Opciones sobre las cuales aplicar para el producto en selección -->
                         <ul class="social">
+                            <!-- Añadir al carrito de compras -->
                             <li><a href="/menu" data-tip="Añadir al carro"><i class="fa fa-shopping-cart"></i></a></li>
+                            <!-- Añadir a la lista de deseos -->
                             <li><a href="/menu" data-tip="Añadir a la lista de deseos"><i class="fa fa-heart"></i></a></li>
+                            <!-- Visualizar detalles del producto -->
                             <li><a href="/menu" data-tip="Detalles"><i class="fa fa-search"></i></a></li>
                         </ul>
                     </div>
                     <div class="product-content">
+                        <!-- Detalles del producto -->
                         <h3 class="title"><a>{{producto.detail}} </a></h3>
+                        <!-- Precio del producto -->
                         <div class="price">${{producto.price}}</div>
                     </div>
                 </div>

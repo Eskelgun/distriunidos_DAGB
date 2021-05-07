@@ -12,7 +12,7 @@ public interface ProductService {
 	/**
 	 * Consulta todos los Productos
 	 * 
-	 * @return List<PaymentMethod>
+	 * @return List<Product>
 	 * @throws Exception
 	 */
 	public List<Product> consultarProductos() throws Exception;

@@ -9,6 +9,7 @@
   </head>
   <body>
 
+    <!-- Contenedor general del registro -->
     <div class="registro-box">
       <h1>Registro</h1>
       
@@ -31,6 +32,7 @@
         <label for="enable">Estado</label>
         <input type="text" disabled [(ngModel)] = "usuarios.enable">                                       
 
+        <!-- Boton de registrar -->
         <input type="submit" value="Registrar" (click) = "ingresar()">
 
       

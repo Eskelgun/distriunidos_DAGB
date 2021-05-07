@@ -1,0 +1,90 @@
+-- ************************************** customer
+
+CREATE TABLE customer
+(
+ email  varchar(500) NOT NULL,
+ name   varchar(500) NULL,
+ addres varchar(500) NULL,
+ phone  varchar(500) NULL,
+ token  varchar(500) NULL,
+ enable varchar(500) NULL,
+ CONSTRAINT PK_customer PRIMARY KEY ( email )
+);
+
+-- ************************************** payment_method
+
+CREATE TABLE payment_method
+(
+ pay_id integer NOT NULL,
+ name   varchar(500) NULL,
+ enable varchar(500) NULL,
+ CONSTRAINT PK_payment_method PRIMARY KEY ( pay_id )
+);
+
+-- ************************************** product
+
+CREATE TABLE product
+(
+ pro_id integer NOT NULL,
+ name   varchar(500) NULL,
+ price  numeric NULL,
+ detail varchar(500) NULL,
+ image  varchar(500) NULL,
+ enable varchar(500) NULL,
+ CONSTRAINT PK_product PRIMARY KEY ( pro_id )
+);
+
+
+-- ************************************** shopping_cart
+
+CREATE TABLE shopping_cart
+(
+ car_id integer NOT NULL,
+ total  numeric NULL,
+ items  numeric NULL,
+ enable varchar(500) NULL,
+ email  varchar(500) NOT NULL,
+ pay_id integer NOT NULL,
+ CONSTRAINT PK_shopping_cart PRIMARY KEY ( car_id ),
+ CONSTRAINT FK_38 FOREIGN KEY ( email ) REFERENCES customer ( email ),
+ CONSTRAINT FK_41 FOREIGN KEY ( pay_id ) REFERENCES payment_method ( pay_id )
+);
+
+CREATE INDEX fkIdx_39 ON shopping_cart
+(
+ email
+);
+
+CREATE INDEX fkIdx_42 ON shopping_cart
+(
+ pay_id
+);
+
+-- ************************************** shopping_product
+
+CREATE TABLE shopping_product
+(
+ shop_id  integer NOT NULL,
+ quantity integer NULL,
+ total    numeric NULL,
+ pro_id   integer NOT NULL,
+ car_id   integer NOT NULL,
+ CONSTRAINT PK_shopping_product PRIMARY KEY ( shop_id ),
+ CONSTRAINT FK_47 FOREIGN KEY ( pro_id ) REFERENCES product ( pro_id ),
+ CONSTRAINT FK_53 FOREIGN KEY ( car_id ) REFERENCES shopping_cart ( car_id )
+);
+
+CREATE INDEX fkIdx_48 ON shopping_product
+(
+ pro_id
+);
+
+CREATE INDEX fkIdx_54 ON shopping_product
+(
+ car_id
+);
+
+
+
+
+

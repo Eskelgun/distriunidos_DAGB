@@ -100,7 +100,7 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 		
 //		Contraseña
-		if (customer.getToken() == null || customer.getToken().trim().equals("")) {
+		if (customer.getToken() == null || customer.getToken().trim().equals("") || customer.getToken().length() <= 5) {
 			throw new Exception("Error en el dato CONTRASEÑA.");
 		}
 		
@@ -143,7 +143,7 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 
 //		Contraseña
-		if (customer.getToken() == null || customer.getToken().trim().equals("")) {
+		if (customer.getToken() == null || customer.getToken().trim().equals("") || customer.getToken().length() <= 5) {
 			throw new Exception("No hay Clientes existentes en el dato CONTRASEÑA.");
 		}
 
@@ -156,6 +156,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Optional<Customer> buscarPorCorreo(String correo) throws Exception {
 		
+//		Correo
 		if (correo == null || correo.trim().equals("")) {
 			throw new Exception("No hay Clientes existentes en el dato CORREO.");
 		}
