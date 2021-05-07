@@ -115,16 +115,16 @@ public class ProductServiceImpl implements ProductService {
 		}
 
 //		Detail
-		if (product.getDetail() == null || product.getDetail().trim().equals(" ")) {
+		if (product.getDetail() == null || product.getDetail().trim().equals("")) {
 			throw new Exception("Error en el dato DETALLE.");
 		}
 
 //		Enable
-		if (product.getEnable() == null || product.getEnable().trim().equals(" ")) {
+		if (product.getEnable() == null || product.getEnable().trim().equals("")) {
 			throw new Exception("Error en el dato ESTADO.");
 		}
 //		Name
-		if (product.getName() == null || product.getName().trim().equals(" ")) {
+		if (product.getName() == null || product.getName().trim().equals("")) {
 			throw new Exception("Error en el dato NOMBRE.");
 		}
 //		Price
@@ -148,16 +148,16 @@ public class ProductServiceImpl implements ProductService {
 		}
 
 //		Detail
-		if (product.getDetail() == null || product.getDetail().trim().equals(" ")) {
+		if (product.getDetail() == null || product.getDetail().trim().equals("")) {
 			throw new Exception("Error en el dato DETALLE.");
 		}
 
 //		Enable
-		if (product.getEnable() == null || product.getEnable().trim().equals(" ")) {
+		if (product.getEnable() == null || product.getEnable().trim().equals("")) {
 			throw new Exception("Error en el dato ESTADO.");
 		}
 //		Name
-		if (product.getName() == null || product.getName().trim().equals(" ")) {
+		if (product.getName() == null || product.getName().trim().equals("")) {
 			throw new Exception("Error en el dato NOMBRE.");
 		}
 //		Price

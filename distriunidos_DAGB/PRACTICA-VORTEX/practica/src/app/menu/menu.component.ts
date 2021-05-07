@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
 
        },
        error=>{
-         window.alert(error);
+         window.alert(error.error);
 
        }
      );

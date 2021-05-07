@@ -36,16 +36,17 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<Customer> consultarPorEmailAndToken(String email, String token) throws Exception {
 		
 //		Email
-		if (email == null || email.trim().equals(" ")) {
+		if (email == null || email.trim().equals("")) {
 			throw new Exception("No puede ser vacío el campo EMAIL.");
 		}
 		
 //		Token
-		if (token == null || token.trim().equals(" ")) {
+		if (token == null || token.trim().equals("")) {
 			throw new Exception("No puede ser vacío el campo TOKEN.");
 		}
 
 		List<Customer> listClientes = customerRepository.findByEmailAndToken(email, token);
+
 
 		return listClientes;
 	}
@@ -74,32 +75,32 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 		
 //		Addres
-		if (customer.getAddres() == null || customer.getAddres().trim().equals(" ")) {
+		if (customer.getAddres() == null || customer.getAddres().trim().equals("")) {
 			throw new Exception("Error en el dato DIRECCIÓN.");
 		}
 		
 //		Email
-		if (customer.getEmail() == null || customer.getEmail().trim().equals(" ")) {
+		if (customer.getEmail() == null || customer.getEmail().trim().equals("")) {
 			throw new Exception("Error en el dato CORREO.");
 		}
 		
 //		Estado
-		if (customer.getEnable() == null || customer.getEnable().trim().equals(" ")) {
+		if (customer.getEnable() == null || customer.getEnable().trim().equals("")) {
 			throw new Exception("Error en el dato ESTADO.");
 		}
 		
 //		Nombre
-		if (customer.getName() == null || customer.getName().trim().equals(" ")) {
+		if (customer.getName() == null || customer.getName().trim().equals("")) {
 			throw new Exception("Error en el dato NOMBRE.");
 		}
 		
 //		Telefono
-		if (customer.getPhone() == null || customer.getPhone().trim().equals(" ")) {
+		if (customer.getPhone() == null || customer.getPhone().trim().equals("")) {
 			throw new Exception("Error en el dato TELEFONO.");
 		}
 		
 //		Contraseña
-		if (customer.getToken() == null || customer.getToken().trim().equals(" ")) {
+		if (customer.getToken() == null || customer.getToken().trim().equals("")) {
 			throw new Exception("Error en el dato CONTRASEÑA.");
 		}
 		
@@ -117,32 +118,32 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 
 //		Addres
-		if (customer.getAddres() == null || customer.getAddres().trim().equals(" ")) {
+		if (customer.getAddres() == null || customer.getAddres().trim().equals("")) {
 			throw new Exception("Error en el dato DIRECCIÓN.");
 		}
 
 //		Email
-		if (customer.getEmail() == null || customer.getEmail().trim().equals(" ")) {
+		if (customer.getEmail() == null || customer.getEmail().trim().equals("")) {
 			throw new Exception("Error en el dato CORREO.");
 		}
 
 //		Estado
-		if (customer.getEnable() == null || customer.getEnable().trim().equals(" ")) {
+		if (customer.getEnable() == null || customer.getEnable().trim().equals("")) {
 			throw new Exception("Error en el dato ESTADO.");
 		}
 
 //		Nombre
-		if (customer.getName() == null || customer.getName().trim().equals(" ")) {
+		if (customer.getName() == null || customer.getName().trim().equals("")) {
 			throw new Exception("Error en el dato NOMBRE.");
 		}
 
 //		Telefono
-		if (customer.getPhone() == null || customer.getPhone().trim().equals(" ")) {
+		if (customer.getPhone() == null || customer.getPhone().trim().equals("")) {
 			throw new Exception("Error en el dato TELEFONO.");
 		}
 
 //		Contraseña
-		if (customer.getToken() == null || customer.getToken().trim().equals(" ")) {
+		if (customer.getToken() == null || customer.getToken().trim().equals("")) {
 			throw new Exception("No hay Clientes existentes en el dato CONTRASEÑA.");
 		}
 
@@ -155,7 +156,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Optional<Customer> buscarPorCorreo(String correo) throws Exception {
 		
-		if (correo == null || correo.trim().equals(" ")) {
+		if (correo == null || correo.trim().equals("")) {
 			throw new Exception("No hay Clientes existentes en el dato CORREO.");
 		}
 

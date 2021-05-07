@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MediosPa } from '../domains/mediosPa';
+import { ConsultarMedioPagoService } from '../service/consultar-medio-pago.service';
 
 @Component({
   selector: 'app-medios-pago',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MediosPagoComponent implements OnInit {
 
-  constructor() { }
+  public medioPagos: MediosPa[];
+
+  constructor(public medioPagosService: ConsultarMedioPagoService) { }
 
   ngOnInit(): void {
+    this.consultarMedioPa();
+  }
+
+  public consultarMedioPa() {
+
+    this.medioPagosService.consultarMedioPago().subscribe(
+      data=>{
+         console.log(data);
+         this.medioPagos=data;
+
+      },
+      error=>{
+        window.alert(error.error);
+
+      }
+    );
   }
 
 }

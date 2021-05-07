@@ -26,7 +26,7 @@ public class PaymentMethodServiceImpl implements PaymentMethodService {
 
 
 		if (listPaymentMethod.isEmpty()) {
-			throw new Exception("No hay Productos existentes en el sistema.");
+			throw new Exception("No hay metodos de pago existentes en el sistema.");
 		}
 		return listPaymentMethod;
 	}
@@ -55,12 +55,12 @@ public class PaymentMethodServiceImpl implements PaymentMethodService {
 		}
 
 //		Name
-		if (paymentMethod.getName() == null || paymentMethod.getName().trim().equals(" ")) {
+		if (paymentMethod.getName() == null || paymentMethod.getName().trim().equals("")) {
 			throw new Exception("Error en el dato NOMBRE.");
 
 //		Enable
 		}
-		if (paymentMethod.getEnable() == null || paymentMethod.getEnable().trim().equals(" ")) {
+		if (paymentMethod.getEnable() == null || paymentMethod.getEnable().trim().equals("")) {
 			throw new Exception("Error en el dato ESTADO.");
 		}
 
@@ -78,12 +78,12 @@ public class PaymentMethodServiceImpl implements PaymentMethodService {
 		}
 
 //		Name
-		if (paymentMethod.getName() == null || paymentMethod.getName().trim().equals(" ")) {
+		if (paymentMethod.getName() == null || paymentMethod.getName().trim().equals("")) {
 			throw new Exception("Error en el dato NOMBRE.");
 
 //		Enable
 		}
-		if (paymentMethod.getEnable() == null || paymentMethod.getEnable().trim().equals(" ")) {
+		if (paymentMethod.getEnable() == null || paymentMethod.getEnable().trim().equals("")) {
 			throw new Exception("Error en el dato ESTADO.");
 		}
 

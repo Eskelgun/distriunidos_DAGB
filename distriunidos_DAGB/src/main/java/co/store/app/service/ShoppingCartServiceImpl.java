@@ -48,7 +48,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 		}
 
 //		estado
-		if (shoppingCart.getEnable() == null || shoppingCart.getEnable().trim().equals(" ")) {
+		if (shoppingCart.getEnable() == null || shoppingCart.getEnable().trim().equals("")) {
 			throw new Exception("El estado no puede ser invalido");
 		}
 

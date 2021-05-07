@@ -39,17 +39,16 @@ export class LoginComponent implements OnInit {
           
           if(this.auth.canActivate){
             this.router.navigate(['menu']);
-          }else{
-            //this.email="";
-            //this.token="";
-          }
-          
+          }          
+        }else{
+          window.alert("No se encontraron datos validos");
         }
 
       }, err => {
         console.log('ERROR');
         console.log(err);
         this.router.navigate(['login']);
+        window.alert(err.error);
       });
   }
 
